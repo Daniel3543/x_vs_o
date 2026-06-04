@@ -154,11 +154,132 @@ h3:nth-of-type(2) {
     transition: all .5s linear;
 }
 
-@media (min-width: 425px) {
-    .game{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+
+
+
+
+
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    .box {
+        width: 380px;
+        height: 380px;
+        gap: 10px;
+    }
+    
+    .box > .block > p {
+        font-size: 65px !important;
+        -webkit-box-reflect: below -25px linear-gradient(transparent 60%, black);
+    }
+    
+    h3, .block > p {
+        font-size: 80px;
+        -webkit-text-stroke: 3px #daecff6c;
+    }
+    
+    .block > p {
+        font-size: 60px !important;
+    }
+    
+    h3:nth-of-type(1),
+    h3:nth-of-type(2) {
+        font-size: 60px;
+        top: 15%;
+    }
+    
+    .block::before,
+    .block::after {
+        width: 15%;
+        height: 15%;
+    }
+    
+    .block::before {
+        top: 6px;
+        left: 6px;
+    }
+    
+    .block::after {
+        bottom: 6px;
+        right: 6px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .box {
+        width: 500px;
+        height: 500px;
+        gap: 12px;
+    }
+    
+    .box > .block > p {
+        font-size: 85px !important;
+    }
+    
+    h3, .block > p {
+        font-size: 110px;
+    }
+    
+    h3:nth-of-type(1),
+    h3:nth-of-type(2) {
+        font-size: 90px;
+        top: 20%;
+    }
+}
+
+/* Для устройств от 1025px до 1440px (ноутбуки) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .box {
+        width: 550px;
+        height: 550px;
+        gap: 14px;
+    }
+    
+    .box > .block > p {
+        font-size: 95px !important;
+    }
+}
+
+/* Для очень больших экранов (от 1441px и выше) */
+@media screen and (min-width: 1441px) {
+    .box {
+        width: 700px;
+        height: 700px;
+        gap: 20px;
+    }
+    
+    .box > .block > p {
+        font-size: 125px !important;
+    }
+    
+    h3, .block > p {
+        font-size: 160px;
+    }
+    
+    h3:nth-of-type(1),
+    h3:nth-of-type(2) {
+        font-size: 140px;
+    }
+}
+
+/* Альтернативная ориентация (ландшафтная для мобильных) */
+@media screen and (min-width: 425px) and (max-width: 768px) and (orientation: landscape) {
+    .box {
+        width: 300px;
+        height: 300px;
+        gap: 8px;
+    }
+    
+    .box > .block > p {
+        font-size: 50px !important;
+    }
+    
+    h3:nth-of-type(1),
+    h3:nth-of-type(2) {
+        top: 40%;
+        font-size: 45px;
+    }
+    
+    h3, .block > p {
+        font-size: 60px;
     }
 }
