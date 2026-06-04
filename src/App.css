@@ -1,0 +1,155 @@
+#root,
+.App {
+    background: black;
+    height: 100vh;
+    position: relative;
+    overflow: hidden !important;
+    width: 100%;
+}
+
+.game {
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        #1c0129, black, #01152D
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+h3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.block > p { 
+    animation-play-state: paused !important;
+    font-size: 95px !important;
+    -webkit-box-reflect: below -25px linear-gradient(transparent 70%, black) !important;
+}
+
+h3, .block > p {
+    font-family: cursive;
+    font-size: 135px;
+    -webkit-box-reflect: below -35px linear-gradient(transparent 50%, black);
+    -webkit-text-stroke: 5px #daecff6c;
+    animation: for_h3_effect 5s linear infinite;
+}
+
+@keyframes for_h3_effect {
+    50% {
+        transform: translateY(-50%) scale(.95);
+    }
+}
+
+h3:nth-of-type(1) {
+    left: 5%;
+    color: dodgerblue;
+    text-shadow: 0 0 20px dodgerblue, 0 0 20px dodgerblue, 0 0 20px dodgerblue, 0 0 20px dodgerblue;
+}
+
+h3:nth-of-type(2) {
+    right: 5%;
+    color: deeppink;
+    text-shadow: 0 0 15px deeppink, 0 0 15px deeppink, 0 0 15px deeppink, 0 0 15px deeppink;
+}
+
+.game {
+    perspective: 1000px;
+}
+
+.box {
+    transform-style: preserve-3d;
+    width: 600px;
+    height: 600px;
+    box-shadow: -5px -5px 10px dodgerblue, 5px 5px 10px deeppink;
+    animation: for_test 5s linear infinite;
+}
+
+@keyframes for_test {
+    50% {
+        box-shadow: 5px 5px 10px dodgerblue, -5px -5px 10px deeppink;
+    }
+}
+
+.box {
+    display: grid;
+    grid-template-columns : repeat(3, 1fr);
+    grid-template-rows    : repeat(3, 1fr);
+    gap: 15px;
+    transition: all 1s;
+}
+
+.box > .block {
+    background: linear-gradient(
+        to left,
+        #010b19,
+        black,
+        #110018
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden !important;
+}
+
+.box > .block > p {
+    -webkit-box-reflect: below -45px linear-gradient(transparent 55%, black);
+    font-size: 105px;
+    color: white;
+    font-family: cursive;
+}
+
+.box > .block {
+    position: relative;
+    overflow: hidden !important;
+    cursor: pointer;
+}
+
+.box > .block::before,
+.box > .block::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    transition: all .3s linear;
+}
+
+.block::before {
+    border-top: 1px solid deeppink;
+    border-left: 1px solid deeppink;
+    top: 10px;
+    left: 10px;
+}
+
+.block::after {
+    border-bottom: 1px solid dodgerblue;
+    border-right: 1px solid dodgerblue;
+    bottom: 10px;
+    right: 10px;
+}
+
+.box > .block:hover:before,
+.box > .block:hover:after {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    position: relative;
+}
+
+.winner_end {
+    position: absolute;
+    height: 20px;
+    border-radius: 15px;
+    background: linear-gradient(
+        to right,
+        deeppink, dodgerblue
+    );
+    z-index: 987 !important;
+    transition: all .5s linear;
+}
