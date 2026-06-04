@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/x_vs_o/static/css/main.dda1fb42.css",
+    "main.js": "/x_vs_o/static/js/main.5d44e867.js",
+    "index.html": "/x_vs_o/index.html",
+    "main.dda1fb42.css.map": "/x_vs_o/static/css/main.dda1fb42.css.map",
+    "main.5d44e867.js.map": "/x_vs_o/static/js/main.5d44e867.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dda1fb42.css",
+    "static/js/main.5d44e867.js"
+  ]
+}
