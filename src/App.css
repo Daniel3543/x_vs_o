@@ -153,3 +153,12 @@ h3:nth-of-type(2) {
     z-index: 987 !important;
     transition: all .5s linear;
 }
+
+@media (min-width: 425px) {
+    .game{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
